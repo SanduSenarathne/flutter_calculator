@@ -7,17 +7,15 @@ class Controllers {
   String result = '';
   String operation = '';
 
-  static List<String> clearVariables() {
-    return ['0', '0', '', ''];
-  }
-
-  static List<int> clearmemory() {
-    return [0, 0];
-  }
-
   void handleClick(String value) {
     //print('$value');
-    if (value == '+' ||
+    if (value == 'C') {
+      firstnum = 0;
+      secondnum = 0;
+      result = '';
+      operation = '';
+      formularText = '';
+    } else if (value == '+' ||
         value == '-' ||
         value == 'X' ||
         value == '/' ||

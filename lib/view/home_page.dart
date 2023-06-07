@@ -29,7 +29,13 @@ class _HomePageState extends State<HomePage> {
 
   /*void handleClick(String value) {
     //print('$value');
-    if (value == '+' ||
+    if (value == 'C') {
+      firstnum = 0;
+      secondnum = 0;
+      result = '';
+      operation = '';
+      formularText = '';
+    } else if (value == '+' ||
         value == '-' ||
         value == 'X' ||
         value == '/' ||
@@ -70,19 +76,6 @@ class _HomePageState extends State<HomePage> {
       answerText = result;
     });
   }*/
-
-  void clearValues() {
-    setState(() {
-      List<String> clearedValues = Controllers.clearVariables();
-      List<int> clearmemory = Controllers.clearmemory();
-      formularText = clearedValues[0];
-      answerText = clearedValues[1];
-      firstnum = clearmemory[0];
-      secondnum = clearmemory[0];
-      result = clearedValues[2];
-      operation = clearedValues[3];
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      clearValues();
+                      handleClick('C');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),

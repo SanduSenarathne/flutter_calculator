@@ -9,8 +9,49 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String formularText = '500 - 1600';
-  String answerText = '-1100';
+  String formularText = '0';
+  String answerText = '0';
+
+  int firstnum = 0;
+  int secondnum = 0;
+  String result = '';
+  String operation = '';
+
+  void handleClick(String value) {
+    print('$value');
+    if (value == '+' || value == '-' || value == 'X' || value == '/') {
+      firstnum = int.parse(answerText);
+      result = '';
+      operation = value;
+    } else if (value == '=') {
+      secondnum = int.parse(answerText);
+      if (operation == '+') {
+        result = (firstnum + secondnum).toString();
+        formularText =
+            firstnum.toString() + operation.toString() + secondnum.toString();
+      }
+      if (operation == '-') {
+        result = (firstnum - secondnum).toString();
+        formularText =
+            firstnum.toString() + operation.toString() + secondnum.toString();
+      }
+      if (operation == 'X') {
+        result = (firstnum * secondnum).toString();
+        formularText =
+            firstnum.toString() + operation.toString() + secondnum.toString();
+      }
+      if (operation == '/') {
+        result = (firstnum / secondnum).toString();
+        formularText =
+            firstnum.toString() + operation.toString() + secondnum.toString();
+      }
+    } else {
+      result = int.parse(answerText + value).toString();
+    }
+    setState(() {
+      answerText = result;
+    });
+  }
 
   void clearValues() {
     setState(() {
@@ -19,11 +60,6 @@ class _HomePageState extends State<HomePage> {
       answerText = clearedValues[1];
     });
   }
-
-  /*void handleClick(String value) {
-    formularText += value;
-    // You can perform further operations based on the value
-  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +152,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('%');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -132,7 +170,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('/');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -148,7 +188,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('1');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -162,7 +204,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('2');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -176,7 +220,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('3');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -190,7 +236,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('X');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -207,7 +255,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      //handleClick('4');
+                      handleClick('4');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
@@ -223,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      //handleClick('5');
+                      handleClick('5');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
@@ -238,7 +286,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('6');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -252,7 +302,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('+');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -268,7 +320,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('7');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -282,7 +336,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('8');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -296,7 +352,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('9');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -310,7 +368,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('-');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -326,7 +386,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('.');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -340,7 +402,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('0');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -354,7 +418,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('000');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(
@@ -368,7 +434,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleClick('=');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),
                       shape: RoundedRectangleBorder(

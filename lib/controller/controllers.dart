@@ -1,5 +1,5 @@
 class Functions {
   static List<String> clearVariables() {
-    return ['', ''];
+    return ['0', '0'];
   }
 }

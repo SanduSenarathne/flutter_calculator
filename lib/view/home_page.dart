@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   String operation = '';
 
   void handleClick(String value) {
-    print('$value');
+    //print('$value');
     if (value == '+' || value == '-' || value == 'X' || value == '/') {
       firstnum = int.parse(answerText);
       result = '';

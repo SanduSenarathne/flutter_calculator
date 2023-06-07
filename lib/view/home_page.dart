@@ -19,7 +19,11 @@ class _HomePageState extends State<HomePage> {
 
   void handleClick(String value) {
     //print('$value');
-    if (value == '+' || value == '-' || value == 'X' || value == '/') {
+    if (value == '+' ||
+        value == '-' ||
+        value == 'X' ||
+        value == '/' ||
+        value == '%') {
       firstnum = int.parse(answerText);
       result = '';
       operation = value;
@@ -42,6 +46,10 @@ class _HomePageState extends State<HomePage> {
       }
       if (operation == '/') {
         result = (firstnum / secondnum).toString();
+        formularText =
+            firstnum.toString() + operation.toString() + secondnum.toString();
+      } else if (operation == '%') {
+        result = (firstnum % secondnum).toString();
         formularText =
             firstnum.toString() + operation.toString() + secondnum.toString();
       }

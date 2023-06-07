@@ -19,16 +19,16 @@ class _HomePageState extends State<HomePage> {
   String result = '';
   String operation = '';
 
-  /*void handleClick(String value) {
+  void handleClick(String value) {
     calculatorController.handleClick(value);
 
     setState(() {
       formularText = calculatorController.formularText;
       answerText = calculatorController.answerText;
     });
-  }*/
+  }
 
-  void handleClick(String value) {
+  /*void handleClick(String value) {
     //print('$value');
     if (value == '+' ||
         value == '-' ||
@@ -70,9 +70,9 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       answerText = result;
     });
-  }
+  }*/
 
-  void clearValues() {
+  /*void clearValues() {
     setState(() {
       List<String> clearedValues = Controllers.clearVariables();
       //List<int> clearmemory = Controllers.clearmemory();
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
       //result = clearedValues[2];
       //operation = clearedValues[3];
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      clearValues();
+                      handleClick('C');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(double.infinity, double.infinity),

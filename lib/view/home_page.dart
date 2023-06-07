@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   void clearValues() {
     setState(() {
-      List<String> clearedValues = Functions.clearVariables();
+      List<String> clearedValues = Controller.clearVariables();
       formularText = clearedValues[0];
       answerText = clearedValues[1];
     });

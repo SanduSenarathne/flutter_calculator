@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final Controllers calculatorController = Controllers();
+
   String formularText = '0';
   String answerText = '0';
 
@@ -18,16 +19,16 @@ class _HomePageState extends State<HomePage> {
   String result = '';
   String operation = '';
 
-  void handleClick(String value) {
+  /*void handleClick(String value) {
     calculatorController.handleClick(value);
 
     setState(() {
       formularText = calculatorController.formularText;
       answerText = calculatorController.answerText;
     });
-  }
+  }*/
 
-  /*void handleClick(String value) {
+  void handleClick(String value) {
     //print('$value');
     if (value == 'C') {
       firstnum = 0;
@@ -75,8 +76,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       answerText = result;
     });
-  }*/
-
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

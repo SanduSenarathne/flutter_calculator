@@ -78,10 +78,6 @@ class _HomePageState extends State<HomePage> {
       //List<int> clearmemory = Controllers.clearmemory();
       formularText = clearedValues[0];
       answerText = clearedValues[1];
-      //firstnum = clearmemory[0];
-      //secondnum = clearmemory[0];
-      //result = clearedValues[2];
-      //operation = clearedValues[3];
     });
   }*/
 
